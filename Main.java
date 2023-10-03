@@ -9,7 +9,7 @@ import org.apache.commons.mail.SimpleEmail;
 
 public class Main {
 	public static void main(String[] args) throws EmailException {
-		String user, userPassword, clientEmail, subject, body;
+		String user, userPassword, receiversEmail, subject, body;
 		Scanner scan = new Scanner(System.in);
 
 		// new email object
@@ -23,8 +23,8 @@ public class Main {
 		System.out.println("Enter your outlook password: ");
 		userPassword = scan.nextLine();
 
-		System.out.println("Enter the clients email: ");
-		clientEmail = scan.nextLine();
+		System.out.println("Enter the receivers email: ");
+		receiversEmail = scan.nextLine();
 
 		System.out.println("Enter the subject of this email: ");
 		subject = scan.nextLine();
@@ -50,7 +50,7 @@ public class Main {
 		email.setFrom(user);
 
 		// send to
-		email.addTo(clientEmail);
+		email.addTo(receiversEmail);
 
 		// send the email
 		email.send();
